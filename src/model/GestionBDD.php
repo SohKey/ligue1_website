@@ -14,7 +14,7 @@ class GestionBDD {
 
     private PDO $cnx;
     
-    function __construct(string $db = 'Ligue_1', string $user = 'postgres', string $pass = 'P@ssw0rdsio') {
+    function __construct(string $db = 'DB_LIgue1', string $user = 'postgres', string $pass = 'postgres') {
         $this->user = $user;
         $this->pass = $pass;
         $this->dsn = 'pgsql:host=localhost;port=5432;dbname=' . $db . ';';
