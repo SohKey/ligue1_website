@@ -16,13 +16,12 @@ This is a PHP-based website that displays the results of a football season and p
 - HTML
 - JavaScript
 - Tailwind CSS
-- Bulma
 
 ## Setup
 
 1. Clone the repository:
 
    ```bash
-   git clone git@github.com:SohKey/football-website.git
+   git clone git@github.com:SohKey/ligue1_website.git
 
 2. Start `index.php` using php
