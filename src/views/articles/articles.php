@@ -9,7 +9,7 @@
                         article</a>
                 </div>
 
-                <div class="flex flex-wrap justify-center space-y-5 md:space-x-5">
+                <div class="flex flex-wrap justify-center">
                     <?php
                     if ($articles == null) {
                         echo "Aucun article enregistré";

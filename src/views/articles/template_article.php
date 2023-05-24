@@ -1,5 +1,5 @@
-<a href=<?php echo "/articles/" . $article->getId_article(); ?> class="bg-white shadow-md rounded-lg p-5 w-[50%] md:w-[25%]">
-    <img src=<?php echo $article->getImage_article() ?> alt="Article 1" class="w-20 h-auto object-cover rounded-t-lg">
+<a href=<?php echo "/articles/" . $article->getId_article(); ?> class="ml-5 mt-5 bg-white shadow-md rounded-lg p-5 w-[50%] md:w-[25%]">
+    <img src=<?php echo $article->getImage_article() ?> class="w-20 h-auto object-cover rounded-t-lg">
     <div class="p-4">
         <h2 class="text-xl font-bold mb-2">
             <?php echo $article->getTitre_article() ?>

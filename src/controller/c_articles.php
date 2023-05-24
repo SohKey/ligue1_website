@@ -1,11 +1,4 @@
 <?php
-
-include('./src/model/GestionCommentaire.php');
-include('./src/model/Commentaire.php');
-
-error_reporting(0);
-
-
 $bdd = new GestionBDD();
 $cnx = $bdd->connect();
 
@@ -22,7 +15,7 @@ if (isset($request_uri)) {
   if (isset($route[2])) {
     if(is_numeric($route[2])) {
         $article = $articleController->getArticlesById((int)$route[2]);
-        include('./src/views/articles/page_article.php');
+        include_once('./src/views/articles/page_article.php');
     } elseif ($route[2] == 'new') {
         include('./src/views/articles/newarticle.php');
     }

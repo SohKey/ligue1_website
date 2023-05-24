@@ -1,14 +1,7 @@
 <?php
-
-if (isset($_SESSION['UserInfo']))
-    include('./src/views/header/header_auth.php');
-else
-    include('./src/views/header/header.php');
-
 $commentaires = $gestionCommentaire->getListCommentaire($article->getId_article());
 
-$status = (object) ['main' => 'hidden', 'statusMessage' => '', 'style' => ''];
-
+$message = "";
 //$user = $userController->get_user_byid($_SESSION['UserInfo']->id);
 
 if (isset($_POST['commentaire'])) {
@@ -22,9 +15,13 @@ if (isset($_POST['commentaire'])) {
     $id_autor = $_SESSION['UserInfo']->id;
 
     $commentaire = new Commentaire(0, $text_commentaire, $id_article, $id_autor);
-    $status = $gestionCommentaire->addCommentaire($commentaire);
-    header("Location: /articles/" . $article->getId_article());
+
+    if($gestionCommentaire->addCommentaire($commentaire)) {
+        $message = "Commentaire enregistré";
+        header("Location: /articles/" . $article->getId_article());
+    } else $message = "Erreur lors de l'enregistrement";
 }
+
 /*
 if (isset($_POST['removeArticle'])) {
     if($article->getId_uti() == $user->getIdUti() || $user->isAdminUti()) {
@@ -71,8 +68,8 @@ if (isset($_POST['removeArticle'])) {
                                 Post comment
                             </button>
                         </div>
-                        <p <?php $status->main ?> class="<?php $status->style ?>">
-                            <?php $status->statusMessage ?>
+                        <p class="px-3 py-2">
+                            <?php echo $message ?>
                         </p>
                     </div>
                 </form>

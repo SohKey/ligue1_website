@@ -28,10 +28,10 @@ Class GestionCommentaire {
 
         try {
             $this->cnx->query($sql);
-            return (object) ['main' => '', 'statusMessage' => 'Commentaire enregistré !', 'style' => 'text-emerald-500'];
+            return true;
 
         } catch (Exception $e) {
-            return (object) ['main' => '', 'statusMessage' => 'Erreur: '.$e, 'style' => 'text-emerald-500'];
+            return false;
         }
         
     }

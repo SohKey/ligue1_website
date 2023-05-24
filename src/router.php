@@ -5,7 +5,8 @@ include('./src/model/GestionArticle.php');
 include('./src/model/Article.php');
 include('./src/model/GestionUser.php');
 include('./src/model/User.php');
-
+include('./src/model/GestionCommentaire.php');
+include('./src/model/Commentaire.php');
 
 function to404() {
     require __DIR__ . '/views/404.php';

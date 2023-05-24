@@ -9,7 +9,7 @@ Class GestionArticle {
 
     public function getListArticle(): array
     {
-        $res = $this->cnx->query("select * from article");
+        $res = $this->cnx->query("select * from article ORDER BY id_article ASC;");
         $tableResult = [];
         while ($ligne = $res->fetch()) {
             $tableResult[] = new Article($ligne[0], $ligne[1], $ligne[2], $ligne[3], $ligne[4]);
